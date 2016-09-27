@@ -6,6 +6,24 @@
     <meta charset="UTF-8" />
     <link rel="stylesheet" type="text/css" href="normalize.css">
     <link rel="stylesheet" type="text/css" href="disappearing-image.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            //Fade out the images when clicked on
+            $(".image-inline img").click(function() {
+                //fade out img that was selected
+                $(this).fadeOut(3000)
+            });
+            //Fade in the images when clicked on
+            $(".restore").click(function() {
+                //fade in each image at a time
+                $(".image-inline img:hidden").each(function(index){
+                    //fade in the image
+                    $(this).fadeIn(3000)
+                });
+            });
+        });
+    </script>
 </head>
 <body>
     <!--Container body-->
